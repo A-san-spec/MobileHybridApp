@@ -1,10 +1,12 @@
 import { Alert, Image, ImageBackground, Text, TextInput, TouchableOpacity, View } from "react-native";
 
+// import { Image } from "expo-image"
+
 import { useState } from "react";
 
 import { Link, useRouter } from "expo-router";
 
-import { styles } from "../styles/style";
+import { styles } from "../styles/loginStyle";
 
 // import {Ionicons} from '@expo/vector-icons';
 
