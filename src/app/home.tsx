@@ -60,7 +60,7 @@ export default function index() {
                     <View className="flex-row">
                         <View className="group flex flex-row items-center gap-2 pl-1.5 pr-3.5 py-1.5 rounded-full bg-primary text-on-primary shadow-sm">
                             <View className="w-10 h-10 rounded-full  overflow-hidden shadow-sm bg-surface-container-high">
-                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: 100, height: 100 }} resizeMode="cover"></Image>
+                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
                             </View>
                             <View className="flex flex-col text-left leading-tight">
                                 <Text className="font-label-md text-white text-label-md">Milo</Text>
@@ -69,7 +69,7 @@ export default function index() {
                         </View>
                         <View className="group flex flex-row items-center gap-2 pl-1.5 pr-3.5 py-1.5 rounded-full bg-surface-container text-on-primary shadow-sm">
                             <View className="w-10 h-10 rounded-full  overflow-hidden shadow-sm bg-surface-container-high">
-                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: 100, height: 100 }} resizeMode="cover"></Image>
+                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
                             </View>
                             <View className="flex flex-col text-left leading-tight">
                                 <Text className="font-label-md text-black text-label-md">Brito</Text>
