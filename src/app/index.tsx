@@ -150,7 +150,7 @@ export default function index() {
                     <Text className="text-secondary-container font-bold text-[16px]">Daftar Sekarang</Text>
                 </TouchableOpacity>
               </View>
-          
+
             </View>
           </View>
         </ScrollView>

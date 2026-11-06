@@ -26,7 +26,7 @@ colors:
   secondary-container: '#fea619'
   on-secondary-container: '#684000'
   tertiary: '#904800'
-  on-tertiary: '#ffffff'
+  on-tertiary: '#fefefe'
   tertiary-container: '#b55d00'
   on-tertiary-container: '#fffbff'
   error: '#ba1a1a'
