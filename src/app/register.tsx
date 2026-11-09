@@ -1,15 +1,9 @@
 import { Alert, Image, Keyboard, KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
-
 import { Ionicons } from '@expo/vector-icons';
-
 import { useEffect, useState } from "react";
-
 import { BackHandler } from 'react-native';
-
 import { useRouter, useSegments } from "expo-router";
-
 import { styles } from "../styles/loginStyle";
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function register() {
@@ -64,22 +58,18 @@ export default function register() {
     Alert.alert("Error", "Password must be at least 8 characters long");
     return;
   }
-  
   if (password !== passwordConf) {
     Alert.alert("Error", "Passwords do not match");
     return;
   }
-
   if (!/^\d+$/.test(whatsapp)) {
     Alert.alert("Error", "WhatsApp number must contain only digits");
     return;
   }
-
   if (whatsapp.length < 10 || whatsapp.length > 15) {
     Alert.alert("Error", "WhatsApp number must be between 10 and 15 digits");
     return;
   }
-
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email)) {
     Alert.alert("Error", "Please enter a valid email address");
     return;
@@ -90,7 +80,6 @@ export default function register() {
 
     const existUsersString = await AsyncStorage.getItem('registered_users');
     const existUsers = existUsersString ? JSON.parse(existUsersString) : [];
-
     const isEmailExist = existUsers.some((user: any) => user.Email === Email);
     const isWhatsappExist = existUsers.some((user: any) => user.whatsapp === whatsapp);
     
@@ -98,7 +87,6 @@ export default function register() {
       Alert.alert("Error", "Email is already registered");
       return;
     }
-
     if (isWhatsappExist) {
       Alert.alert("Error", "WhatsApp number is already registered");
       return;
@@ -115,7 +103,6 @@ export default function register() {
     await AsyncStorage.setItem('registered_users', JSON.stringify(existUsers));
 
     console.log("Data berhasil disimpan secara di lokal");
-
     Alert.alert("Success", "Registration Successful", [{text: "OK", onPress: () => router.replace('/')}]);
     
   } catch (error) {
@@ -134,13 +121,9 @@ export default function register() {
         >
           <View className="flex flex-col w-full max-w-md mx-auto pb-[150px]">
             <View className="absolute -top-10 -left-12 w-64 h-64 bg-teal-200/40 rounded-full -z-10"></View>
-
             <View className="absolute top-56 -right-12 w-64 h-64 bg-amber-200/40 -z-10"></View>
-
             <View className="absolute top-[410] -left-12 w-64 h-64 bg-amber-200/40 rounded-full -z-10"></View>
-
             <View className="absolute top-[650] -right-12 w-64 h-64 bg-teal-200/40 -z-10"></View>
-
             <View className="absolute top-[850] -left-15 w-64 h-64 bg-amber-200/40 -z-10"></View>
 
             <View className="relative w-full flex flex-col items-center pt-[30px] pb-2">
@@ -270,7 +253,7 @@ export default function register() {
 
               <View className="flex-row items-center justify-center mt-20">
                 <Text className="text-[16px] text-[#1c1b1b76]">Sudah punya akun? </Text>
-                <TouchableOpacity onPress={() => router.replace('/')}>
+                <TouchableOpacity onPress={() => handleRegister()}>
                     <Text className="text-secondary-container font-bold text-[16px]">Login</Text>
                 </TouchableOpacity>
               </View>

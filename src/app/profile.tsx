@@ -1,21 +1,14 @@
 import { Image, Keyboard, ScrollView, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
-
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-
 import { useEffect, useState } from "react";
-
 import { useRouter, useSegments } from "expo-router";
-
 import { BackHandler } from 'react-native';
-
 import { petsData } from './data';
 
 export default function Page() {
     const [search, setSearch] = useState("");
     const [isSearchFocused, setIsSearchFocused] = useState(false);
     const [activeTab, setActiveTab] = useState("Profile"); //Default page yg aktif, kalo Profile, yaaa nanti jadi profile, kalo pesanan nanti jadi pesanan
-    
-
     const segments = useSegments();
     const router = useRouter();
     
@@ -54,7 +47,7 @@ export default function Page() {
                             <Text className="text-xl font-bold text-on-surface tracking-tight">Profile Pengguna</Text>
                         </View>
 
-                        {/* Profile */}
+                        {/* Profile =-------*/}
                         <View className="flex flex-col gap-4">
                             <View className="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-outline-variant/30 flex flex-col gap-4">
                                 <View className="flex-row items-center gap-3.5">
@@ -89,6 +82,7 @@ export default function Page() {
                                         
                                         <MaterialIcons name="check-circle" size={16} color="#00685f" />
                                     </View>
+
                                     <View className="h-px bg-outline-variant/30"></View>
                                     <View className="flex flex-row items-center justify-between gap-2">
                                        <View className="flex flex-row items-center gap-2.5 min-w-0">
@@ -260,7 +254,7 @@ export default function Page() {
 
                         </View>
 
-                        {/* Log Out */}
+                        {/* Log Out----- */}
                         <View className="flex flex-col w-full items-center justify-center gap-1.5 pt-5 pb-6 text-center">
                             <TouchableOpacity onPress={() => router.replace('/')} className="flex flex-row w-full h-10 items-center justify-center gap-1 px-3 py-1.5 rounded-full bg-error/5 active:bg-error/10">
                                 <Ionicons name="log-out-outline" size={16} color="#ba1a1a" />

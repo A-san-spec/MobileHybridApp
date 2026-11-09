@@ -66,11 +66,9 @@ export default function index() {
 
     if (foundUser) {
       Alert.alert("Success", `Welcome back, ${foundUser.username}!`);
-      
       router.replace('/home'); 
     } else {
       Alert.alert("Error", "Invalid username/email or password!");
-      
     }
     } catch (error) {
       Alert.alert("Error", "An error occurred during login");
@@ -88,11 +86,8 @@ export default function index() {
         >
           <View className="flex flex-col w-full max-w-md mx-auto pb-[100px]">
             <View className="absolute -top-10 -left-12 w-64 h-64 bg-teal-200/40 rounded-full -z-10"></View>
-
             <View className="absolute top-56 -right-12 w-64 h-64 bg-amber-200/40 -z-10"></View>
-
             <View className="absolute top-[410] -left-12 w-64 h-64 bg-amber-200/40 rounded-full -z-10"></View>
-
             <View className="absolute top-[650] -right-12 w-64 h-64 bg-teal-200/40 -z-10"></View>
 
             <View className="relative w-full flex flex-col items-center pt-[30px] pb-2">
@@ -151,12 +146,12 @@ export default function index() {
                   </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity className={styles.button} onPress={() => router.replace('/home')} disabled={loading}>
+                <TouchableOpacity className={styles.button} onPress={() => handleLogin()} disabled={loading}>
                   <Text className="text-white font-semibold text-[16px]">{loading ? "Loading..." : "Login"}</Text>
                 </TouchableOpacity>
               </View>
 
-              <View className="flex-row items-center justify-center mt-20">
+              <View className="flex-row items-center justify-center mt-20 mb-10">
                 <Text className="text-[16px] text-[#1c1b1b76]">Belum punya akun? </Text>
                 <TouchableOpacity onPress={() => router.replace('/register')}>
                     <Text className="text-secondary-container font-bold text-[16px]">Daftar Sekarang</Text>

@@ -1,15 +1,9 @@
 import { Image, Keyboard, ScrollView, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
-
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-
 import { useEffect, useState } from "react";
-
 import { useRouter } from "expo-router";
-
 import { BackHandler } from 'react-native';
-
 import { petsData } from './data';
-
 import { sitterData } from './data';
 
 
@@ -19,7 +13,6 @@ export default function index() {
     const [isSearchFocused, setIsSearchFocused] = useState(false);
     const [activeTab, setActiveTab] = useState("Home"); //Default page yg aktif, kalo Profile, yaaa nanti jadi profile, kalo pesanan nanti jadi pesanan
     const [isVerticalScrollEnabled, setIsVerticalScrollEnabled] = useState(true);
-
     const router = useRouter();
 
     useEffect(() => 
@@ -42,7 +35,6 @@ export default function index() {
           scrollEnabled={isVerticalScrollEnabled} className="">
 
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-
                {/* View Body */}
                 <View className="bg-background font-body-md text-on-surface flex flex-col min-h-screen">
 
@@ -79,7 +71,6 @@ export default function index() {
                         />
 
                         <View className="p-3">
-
                                 <View className="w-full mb-3 justify-center bg-surface-container-low/70 border rounded p-2 items-center justify-between flex-row border-gray-200 flex-row justify-between">
                                     <View className="flex gap-1.5 ">
                                         <Text className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Hello, Maya!  👋</Text>
@@ -132,12 +123,7 @@ export default function index() {
                                         </View>
                                     </View>
                                 </View>
-
                         </View>
-
-                        
-                        
-
                     </View>
 
                            
@@ -196,8 +182,6 @@ export default function index() {
 
 
                         <View className="relative w-full h-52 rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 bg-surface-container-low select-none">
-                            
-
                             <View className="absolute inset-0 bg-[#eaf4eb] opacity-90 justify-center items-center">
                                 <Image 
                                     source={require('../../assets/images/Maps.png')}
@@ -261,6 +245,7 @@ export default function index() {
                                         />
                                     </View>
                                 </View>
+
                                 <View className="mt-0.5 px-1.5 py-0.5 rounded-full bg-white shadow-xs">
                                     <Text className="text-[10px] font-semibold text-on-surface">50rb · 1.4km</Text>
                                 </View>
@@ -271,6 +256,7 @@ export default function index() {
                                 <View className="w-7 h-7 rounded-full bg-secondary-container ring-2 ring-white shadow-sm items-center justify-center">
                                     <MaterialIcons name="pets" size={15} color="#2a1700" />
                                 </View>
+
                                 <View className="mt-0.5 px-1.5 py-0.5 rounded-full bg-white/90 shadow-xs">
                                     <Text className="text-[9px] font-semibold text-on-surface">60rb · 1.9km</Text>
                                 </View>
@@ -287,6 +273,7 @@ export default function index() {
                                                 resizeMode="cover"
                                             />
                                         </View>
+
                                         <View className="flex-1 min-w-0">
                                             <View className="flex-row items-center gap-1.5">
                                                 <Text className="text-[13px] font-bold text-on-surface truncate">{sitterData[0].name}</Text>
@@ -295,13 +282,13 @@ export default function index() {
                                             <Text className="text-[11px] text-on-surface-variant truncate">0.8 km · Rp 75rb/hari</Text>
                                         </View>
                                     </View>
+
                                     <TouchableOpacity className="px-3 py-1 rounded-full bg-primary shrink-0 active:scale-95 flex-row items-center gap-0.5 shadow-xs">
                                         <Text className="text-on-primary text-xs font-bold">Lihat</Text>
                                         <MaterialIcons name="chevron-right" size={13} color="#ffffff" />
                                     </TouchableOpacity>
                                 </View>
                             </View>
-
                         </View>
                     </View>
 
@@ -364,7 +351,7 @@ export default function index() {
                                         <TouchableOpacity className="w-9 h-9 rounded-xl border border-outline-variant/60 items-center justify-center">
                                             <Ionicons name="chatbubble-outline" size={18} color="#0b1c30" />
                                         </TouchableOpacity>
-                                        <TouchableOpacity className="px-4 py-2 rounded-xl bg-primary active:scale-95">
+                                        <TouchableOpacity onPress={() => router.replace('/reserve')} className="px-4 py-2 rounded-xl bg-primary active:scale-95">
                                             <Text className="text-on-primary font-bold text-xs">Reservasi</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -416,6 +403,7 @@ export default function index() {
                                             <Text className="text-xs text-on-surface-variant">{ sitterData[1].priceUnit }</Text>
                                         </View>
                                     </View>
+
                                     <View className="flex-row items-center gap-2">
                                         <TouchableOpacity className="w-9 h-9 rounded-xl border border-outline-variant/60 items-center justify-center">
                                             <Ionicons name="chatbubble-outline" size={18} color="#0b1c30" />
@@ -437,7 +425,6 @@ export default function index() {
                         </View>
 
                         <View className="flex-row gap-3">
-
                             <TouchableOpacity className="flex-1 bg-surface-container-lowest rounded-2xl p-2.5 border border-outline-variant/50 shadow-sm">
                                 <View className="w-full h-24 rounded-xl overflow-hidden mb-2 bg-surface-container-low">
                                     <Image 
@@ -450,7 +437,6 @@ export default function index() {
                                 <Text className="text-xs font-bold text-on-surface" numberOfLines={2}>Tanda Anabul Nyaman Bersama Pet Sitter Baru</Text>
                             </TouchableOpacity>
 
-
                             <TouchableOpacity className="flex-1 bg-surface-container-lowest rounded-2xl p-2.5 border border-outline-variant/50 shadow-sm">
                                 <View className="w-full h-24 rounded-xl overflow-hidden mb-2 bg-surface-container-low">
                                     <Image 
@@ -459,15 +445,14 @@ export default function index() {
                                         resizeMode="cover"
                                     />
                                 </View>
+
                                 <Text className="text-[11px] font-semibold text-on-surface-variant mb-0.5">Daftar periksa</Text>
                                 <Text className="text-xs font-bold text-on-surface" numberOfLines={2}>Checklist Makanan & Obat Sebelum Dititipkan</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
-
             </TouchableWithoutFeedback>
-
         </ScrollView>
 
         {/* Bottom Navbar----------------------- */}
@@ -532,9 +517,7 @@ export default function index() {
                     </Text>
                 </TouchableOpacity>
             </View>
-
         </View>
-
   );
 }
 
