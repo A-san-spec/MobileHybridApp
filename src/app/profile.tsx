@@ -173,21 +173,21 @@ export default function Page() {
                                             
                                             <View className="flex flex-col min-w-0 flex-1">
                                                 <View className="flex flex-row items-center gap-1">
-                                                    <Text className="text-sm font-bold text-on-surface truncate">Milo</Text>
+                                                    <Text className="text-sm font-bold text-on-surface truncate">{petsData[0].name}</Text>
                                                     <View className="bg-surface-container-high px-2 py-0.5 rounded-full shrink-0">
                                                         <Text className="text-[10px] font-semibold text-on-surface-variant">♂️ Jantan</Text>
                                                     </View>
                                                 </View>
-                                                <Text className="text-xs text-on-surface-variant mt-0.5">Golden Retriever • 3 Thn (28 kg)</Text>
+                                                <Text className="text-xs text-on-surface-variant mt-0.5">{petsData[0].breed} • {petsData[0].age} ({petsData[0].age})</Text>
                                                 
                                                 <View className="flex flex-row flex-wrap gap-1 mt-1.5">
                                                     <View className="flex flex-row items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full">
                                                         <Ionicons name="medical-outline" size={11} color="#008378" />
-                                                        <Text className="text-[10px] font-semibold text-primary">Vaksin Lengkap</Text>
+                                                        <Text className="text-[10px] font-semibold text-primary">{petsData[0].statusVaksin}</Text>
                                                     </View>
                                                     <View className="flex flex-row items-center gap-1 bg-amber-100 px-2 py-0.5 rounded-full">
                                                         <Ionicons name="happy-outline" size={11} color="#653e00" />
-                                                        <Text className="text-[10px] font-semibold text-amber-800">Ramah Anak</Text>
+                                                        <Text className="text-[10px] font-semibold text-amber-800">{petsData[0].sifat}</Text>
                                                     </View>
                                                 </View>
                                             </View>
@@ -196,7 +196,7 @@ export default function Page() {
                                         <View className="flex flex-row items-center justify-between pt-2 border-t border-outline-variant/20">
                                             <View className="flex flex-row items-center gap-1">
                                                 <Ionicons name="walk-outline" size={15} color="#008378" />
-                                                <Text className="text-[11px] text-on-surface-variant">Rutin Jalan Sore 3x/minggu</Text>
+                                                <Text className="text-[11px] text-on-surface-variant">{petsData[0].aktivitas}</Text>
                                             </View>
                                             <TouchableOpacity className="flex flex-row items-center gap-0.5">
                                                 <Text className="text-xs text-primary font-bold">Detail</Text>
@@ -218,21 +218,21 @@ export default function Page() {
 
                                             <View className="flex flex-col min-w-0 flex-1">
                                                 <View className="flex flex-row items-center gap-1">
-                                                    <Text className="text-sm font-bold text-on-surface truncate">Luna</Text>
+                                                    <Text className="text-sm font-bold text-on-surface truncate">{petsData[1].name}</Text>
                                                     <View className="bg-surface-container-high px-2 py-0.5 rounded-full shrink-0">
                                                         <Text className="text-[10px] font-semibold text-on-surface-variant">♀️ Betina</Text>
                                                     </View>
                                                 </View>
-                                                <Text className="text-xs text-on-surface-variant mt-0.5">British Shorthair • 2 Thn (4.2 kg)</Text>
+                                                <Text className="text-xs text-on-surface-variant mt-0.5">{petsData[1].breed} • {petsData[1].age} ({petsData[1].age})</Text>
 
                                                 <View className="flex flex-row flex-wrap gap-1 mt-1.5">
                                                     <View className="flex flex-row items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full">
                                                         <Ionicons name="medical-outline" size={11} color="#008378" />
-                                                        <Text className="text-[10px] font-semibold text-primary">Steril & Vaksin</Text>
+                                                        <Text className="text-[10px] font-semibold text-primary">{petsData[1].statusVaksin}</Text>
                                                     </View>
                                                     <View className="flex flex-row items-center gap-1 bg-surface-container px-2 py-0.5 rounded-full">
                                                         <Ionicons name="time-outline" size={11} color="#4b5d6f" />
-                                                        <Text className="text-[10px] font-semibold text-on-surface-variant">Butuh Adaptasi</Text>
+                                                        <Text className="text-[10px] font-semibold text-on-surface-variant">{petsData[1].sifat}</Text>
                                                     </View>
                                                 </View>
                                             </View>
@@ -241,7 +241,7 @@ export default function Page() {
                                         <View className="flex flex-row items-center justify-between pt-2 border-t border-outline-variant/20">
                                             <View className="flex flex-row items-center gap-1">
                                                 <Ionicons name="home-outline" size={15} color="#855300" />
-                                                <Text className="text-[11px] text-on-surface-variant">Kunjungan Saat Liburan</Text>
+                                                <Text className="text-[11px] text-on-surface-variant">{petsData[1].aktivitas}</Text>
                                             </View>
                                             <TouchableOpacity className="flex flex-row items-center gap-0.5">
                                                 <Text className="text-xs text-primary font-bold">Detail</Text>

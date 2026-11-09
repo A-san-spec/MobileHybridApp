@@ -246,7 +246,7 @@ export default function register() {
                   </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity className={styles.button} onPress={handleRegister} disabled={loading}>
+                <TouchableOpacity className={styles.button} onPress={() => handleRegister()} disabled={loading}>
                   <Text className="text-white font-semibold text-[16px]">{loading ? "Loading..." : "Daftar"}</Text>
                 </TouchableOpacity>
               </View>
