@@ -1,7 +1,5 @@
 import { Alert, Image, ImageBackground, Platform, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-// import { Image } from "expo-image"
-
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { useState } from "react";
