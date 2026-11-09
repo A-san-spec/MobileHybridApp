@@ -8,6 +8,10 @@ import { useRouter } from "expo-router";
 
 import { BackHandler } from 'react-native';
 
+import { petsData } from './data';
+
+import { sitterData } from './data';
+
 
 
 export default function index() {
@@ -89,7 +93,7 @@ export default function index() {
                                     </View>
                                 </View>
 
-                                {/* Daftar Anabul */}
+                                {/* Daftar Anabul ----------------*/}
                                 <View className="gap-4 justify-center bg-surface-container-low/70 border border-white p-3 rounded">
                                     <View className="flex-row justify-between justify-center">
                                         <Text className="font-headline-md text-headline-md text-on-surface">Anabul Kesayanganmu ❤ </Text>
@@ -101,29 +105,29 @@ export default function index() {
                                     <View className="flex-row justify-between justify-center">
                                         <View className="flex items-center gap-2 p-2 rounded bg-on-primary-fixed/80 text-on-primary shadow-sm">
                                             <View className="w-full h-20  rounded overflow-hidden shadow-sm bg-surface-container-high">
-                                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
+                                                <Image source={{ uri: petsData[0].imageuri }} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
                                             </View>
                                             <View className="flex flex-col text-left leading-tight">
-                                                <Text className="font-label-md text-white text-label-md">Milo</Text>
-                                                <Text className="font-label-sm text-white text-label-sm opacity-90">Golden Retriever</Text>
+                                                <Text className="font-label-md text-white text-label-md">{petsData[0].name}</Text>
+                                                <Text className="font-label-sm text-white text-label-sm opacity-90">{petsData[0].breed}</Text>
                                             </View>
                                         </View>
                                         <View className="flex items-center gap-2 p-2 rounded bg-on-primary-fixed/80 text-on-primary shadow-sm">
                                             <View className="w-full h-20  rounded overflow-hidden shadow-sm bg-surface-container-high">
-                                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
+                                                <Image source={{ uri: petsData[1].imageuri }} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
                                             </View>
                                             <View className="flex flex-col text-left leading-tight">
-                                                <Text className="font-label-md text-white text-label-md">Milo</Text>
-                                                <Text className="font-label-sm text-white text-label-sm opacity-90">Golden Retriever</Text>
+                                                <Text className="font-label-md text-white text-label-md">{petsData[1].name}</Text>
+                                                <Text className="font-label-sm text-white text-label-sm opacity-90">{petsData[1].breed}</Text>
                                             </View>
                                         </View>
                                         <View className="flex items-center gap-2 p-2 rounded bg-on-primary-fixed/80 text-on-primary shadow-sm">
                                             <View className="w-full h-20  rounded overflow-hidden shadow-sm bg-surface-container-high">
-                                                <Image source={require('../../assets/images/Sapi2.jpg')} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
+                                                <Image source={petsData[2].image} style={{ width: '100%', height: '100%' }} resizeMode="cover"></Image>
                                             </View>
                                             <View className="flex flex-col text-left leading-tight">
-                                                <Text className="font-label-md text-white text-label-md">Milo</Text>
-                                                <Text className="font-label-sm text-white text-label-sm opacity-90">Golden Retriever</Text>
+                                                <Text className="font-label-md text-white text-label-md">{petsData[2].name}</Text>
+                                                <Text className="font-label-sm text-white text-label-sm opacity-90">{petsData[2].breed}</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -174,7 +178,7 @@ export default function index() {
                     </View>
 
 
-                    {/* maps */}
+                    {/* maps------------------- */}
                     <View className="px-4 mb-6">
                         <View className="flex-row items-center justify-between mb-3">
                             <View className="flex-row items-center gap-2">
@@ -285,8 +289,8 @@ export default function index() {
                                         </View>
                                         <View className="flex-1 min-w-0">
                                             <View className="flex-row items-center gap-1.5">
-                                                <Text className="text-[13px] font-bold text-on-surface truncate">Sarah Amanda</Text>
-                                                <Text className="text-[11px] text-secondary font-bold">⭐ 4.9</Text>
+                                                <Text className="text-[13px] font-bold text-on-surface truncate">{sitterData[0].name}</Text>
+                                                <Text className="text-[11px] text-secondary font-bold">⭐ {sitterData[0].rating}</Text>
                                             </View>
                                             <Text className="text-[11px] text-on-surface-variant truncate">0.8 km · Rp 75rb/hari</Text>
                                         </View>
@@ -302,7 +306,7 @@ export default function index() {
                     </View>
 
 
-                    {/* Rekomendasi Sitter */}
+                    {/* Rekomendasi Sitter---------------------- */}
                     <View className="px-4 mb-6">
                         <View className="flex-row items-baseline justify-between mb-3">
                             <Text className="text-base font-bold text-on-surface tracking-tight">Rekomendasi Teratas</Text>
@@ -311,11 +315,11 @@ export default function index() {
 
                         <View className="gap-3.5">
 
-                            {/* Sitter 1 */}
+                            {/* Sitter 1 -----*/}
                             <View className="bg-surface-container-lowest rounded-2xl p-3.5 border border-outline-variant/50 shadow-sm">
                                 <View className="flex-row items-start gap-3">
                                     <Image 
-                                        source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKFuPFZye5-FKfywmPhJOxbgK2yJaPseNkIxkVNCwHeBcm8E9X79LKYMvXEbLZGMqcTWEwPnssgNJoc30xKXn7Pfl9RSUZ4MGjVQ5uIvt-sGkrAHEqOxNMOzgzUs0xRRfUYJXunLSUM8I5zrRlNlJAvg2Go9HBHpnm3l82NUybqOrfNqjv-qnwXEWyQI6T9qI_7ndn7W-TKqLyxlTSRd3YbsqWo9absJf0y-pZd987K7mZwCf2Nm7u' }} 
+                                        source={{ uri: sitterData[0].imageuri }} 
                                         style={{ width: 64, height: 64 }}
                                         className="rounded-xl shrink-0"
                                         resizeMode="cover"
@@ -323,24 +327,24 @@ export default function index() {
                                     <View className="flex-1 min-w-0">
                                         <View className="flex-row items-start justify-between gap-1">
                                             <View className="flex-row items-center gap-1 flex-1 min-w-0">
-                                                <Text className="text-sm font-bold text-on-surface truncate">Sarah Amanda</Text>
+                                                <Text className="text-sm font-bold text-on-surface truncate">{ sitterData[0].name }</Text>
                                                 <MaterialIcons name="verified" size={15} color="#00685f" />
                                             </View>
                                             <View className="flex-row items-center gap-0.5 shrink-0">
                                                 <MaterialIcons name="star" size={14} color="#855300" />
-                                                <Text className="text-xs font-bold text-on-surface">4.9</Text>
-                                                <Text className="text-on-surface-variant text-[11px]">(128)</Text>
+                                                <Text className="text-xs font-bold text-on-surface">({ sitterData[0].rating })</Text>
+                                                <Text className="text-on-surface-variant text-[11px]">({ sitterData[0].reviewsCount })</Text>
                                             </View>
                                         </View>
-                                        <Text className="text-xs text-on-surface-variant mt-0.5" numberOfLines={1}>5 thn pengalaman · Rumah berhalaman aman</Text>
+                                        <Text className="text-xs text-on-surface-variant mt-0.5" numberOfLines={1}>{ sitterData[0].role }</Text>
                                         
                                         <View className="flex-row items-center gap-1.5 mt-2 flex-wrap">
                                             <View className="flex-row items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-md">
                                                 <MaterialIcons name="location-on" size={13} color="#00685f" />
-                                                <Text className="text-[11px] text-on-surface-variant font-medium">0.8 km · Pondok Gede</Text>
+                                                <Text className="text-[11px] text-on-surface-variant font-medium">{ sitterData[0].distance }</Text>
                                             </View>
                                             <View className="bg-surface-container-low px-2 py-0.5 rounded-md">
-                                                <Text className="text-[11px] text-on-surface-variant font-medium">Update Foto/Video</Text>
+                                                <Text className="text-[11px] text-on-surface-variant font-medium">{ sitterData[0].badgeFeature }</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -352,8 +356,8 @@ export default function index() {
                                     <View>
                                         <Text className="text-[10px] text-on-surface-variant font-medium">Tarif harian</Text>
                                         <View className="flex-row items-baseline gap-1">
-                                            <Text className="text-base font-bold text-on-surface">Rp 75.000</Text>
-                                            <Text className="text-xs text-on-surface-variant">/ hari</Text>
+                                            <Text className="text-base font-bold text-on-surface">{ sitterData[0].price }</Text>
+                                            <Text className="text-xs text-on-surface-variant">{ sitterData[0].priceUnit }</Text>
                                         </View>
                                     </View>
                                     <View className="flex-row items-center gap-2">
@@ -367,11 +371,11 @@ export default function index() {
                                 </View>
                             </View>
 
-                            {/* Sitter 2 */}
+                            {/* Sitter 2 -----*/}
                             <View className="bg-surface-container-lowest rounded-2xl p-3.5 border border-outline-variant/50 shadow-sm">
                                 <View className="flex-row items-start gap-3">
                                     <Image 
-                                        source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDowJGvGUPKYliZ8zAmsLljDA5LHo-Lfyhl6rIHAW_DiotfB9uRU5ekvEyeR7CBbCoZL9VOHivUtNfXhiCEUtDmIPMulqz7qbPvKL4PuFqO0kpgNuEK_c_l30CIWRAhPBgh4m6lhqynuOc1cWuChqVXFACvbQyB9H0XT3Pdzu65r56GRju9t3mro-I0eu9gpk53m7tSUsTv-0DPitbz0Ql1zV4xyyZ5NFjXtau4bZSSNLNr0emd_2SM' }} 
+                                        source={{ uri: sitterData[1].imageuri }} 
                                         style={{ width: 64, height: 64 }}
                                         className="rounded-xl shrink-0"
                                         resizeMode="cover"
@@ -379,24 +383,24 @@ export default function index() {
                                     <View className="flex-1 min-w-0">
                                         <View className="flex-row items-start justify-between gap-1">
                                             <View className="flex-row items-center gap-1 flex-1 min-w-0">
-                                                <Text className="text-sm font-bold text-on-surface truncate">Budi Pratama</Text>
+                                                <Text className="text-sm font-bold text-on-surface truncate">{ sitterData[1].name }</Text>
                                                 <MaterialIcons name="verified" size={15} color="#00685f" />
                                             </View>
                                             <View className="flex-row items-center gap-0.5 shrink-0">
                                                 <MaterialIcons name="star" size={14} color="#855300" />
-                                                <Text className="text-xs font-bold text-on-surface">4.8</Text>
-                                                <Text className="text-on-surface-variant text-[11px]">(94)</Text>
+                                                <Text className="text-xs font-bold text-on-surface">{ sitterData[1].rating }</Text>
+                                                <Text className="text-on-surface-variant text-[11px]">({ sitterData[1].reviewsCount })</Text>
                                             </View>
                                         </View>
-                                        <Text className="text-xs text-on-surface-variant mt-0.5" numberOfLines={1}>Spesialis kucing senior & rawat berkala</Text>
+                                        <Text className="text-xs text-on-surface-variant mt-0.5" numberOfLines={1}>{ sitterData[1].role }</Text>
                                         
                                         <View className="flex-row items-center gap-1.5 mt-2 flex-wrap">
                                             <View className="flex-row items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-md">
                                                 <MaterialIcons name="location-on" size={13} color="#00685f" />
-                                                <Text className="text-[11px] text-on-surface-variant font-medium">1.4 km · Senopati</Text>
+                                                <Text className="text-[11px] text-on-surface-variant font-medium">{ sitterData[1].distance }</Text>
                                             </View>
                                             <View className="bg-surface-container-low px-2 py-0.5 rounded-md">
-                                                <Text className="text-[11px] text-on-surface-variant font-medium">Beri Makan & Obat</Text>
+                                                <Text className="text-[11px] text-on-surface-variant font-medium">{ sitterData[1].badgeFeature }</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -408,8 +412,8 @@ export default function index() {
                                     <View>
                                         <Text className="text-[10px] text-on-surface-variant font-medium">Tarif kunjungan</Text>
                                         <View className="flex-row items-baseline gap-1">
-                                            <Text className="text-base font-bold text-on-surface">Rp 50.000</Text>
-                                            <Text className="text-xs text-on-surface-variant">/ kunjungan</Text>
+                                            <Text className="text-base font-bold text-on-surface">{ sitterData[1].price }</Text>
+                                            <Text className="text-xs text-on-surface-variant">{ sitterData[1].priceUnit }</Text>
                                         </View>
                                     </View>
                                     <View className="flex-row items-center gap-2">
@@ -425,7 +429,7 @@ export default function index() {
                         </View>
                     </View>
 
-                    {/* Panduan Pemilik Anabul */}
+                    {/* Panduan Pemilik Anabul-------- */}
                     <View className="px-4 mb-8">
                         <View className="flex-row items-baseline justify-between mb-3">
                             <Text className="text-base font-bold text-on-surface tracking-tight">Panduan Untuk Pemilik Anabul</Text>
@@ -466,7 +470,7 @@ export default function index() {
 
         </ScrollView>
 
-        {/* Bottom Navbar */}
+        {/* Bottom Navbar----------------------- */}
         <View className="flex-row right-0 bg-white border-t border-gray-200 py-3 px-2 justify-between items-center shadow-lg">
                 <TouchableOpacity 
                     onPress={() => {setActiveTab('Home'); router.replace('/home');}} 

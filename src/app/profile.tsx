@@ -8,6 +8,8 @@ import { useRouter, useSegments } from "expo-router";
 
 import { BackHandler } from 'react-native';
 
+import { petsData } from './data';
+
 export default function Page() {
     const [search, setSearch] = useState("");
     const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -169,7 +171,7 @@ export default function Page() {
                                         <View className="flex flex-row items-center gap-3">
                                             <View className="w-16 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
                                                 <Image 
-                                                    source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBmdBKR7buTBWQpKy_rZ4HS2T-w0GXBf7RBXDJwgaLxp2F17Tzdu6HRv8yS7lhDYLvx1uqX9czep3UcYGI005wel2BhbAsTewm0vDlAaOQD81IS5MzgXghnrsjwSaEw8cmDuv2frcUgVsiS5Mg1dfn4RGDLSvmk67npMQWOBGjO7YIprnCinXwHhLeuxzMCx-nX9UDq1Fr7gFZBAmaTqwmppeuvSqnTbk5NDhU26Q'}} 
+                                                    source={{ uri: petsData[0].imageuri }} 
                                                     style={{ width: '100%', height: '100%', position: 'absolute'}} 
                                                     resizeMode="cover"
                                                 />
@@ -214,7 +216,7 @@ export default function Page() {
                                         <View className="flex flex-row items-center gap-3">
                                             <View className="w-16 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 relative">
                                                 <Image 
-                                                    source={{uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDc3GmAjjnGEcLHLhqi7NgFA7xDONPzyrTghwiUsuTFn_I8D9ySH3N2vb-BV7BsDsW3gKeXW-83ubM0RO55ZfvugZ5ARLqtukl6-3J_r6h-s08Qy87p6Z6wr3BRBGOyjLPm9oto8EjX_pc8OYZN3sWezEyIEJvjD79pNypjeGXRpYqshv_9C61VPSoCb4aQk9QNPGkmOGFqRoNLgoaZ15HhdcS8GT-xMjkI7tS2izc'}} 
+                                                    source={{uri: petsData[1].imageuri}} 
                                                     style={{width: '100%', height: '100%', position: 'absolute'}} 
                                                     resizeMode="cover" 
                                                 />
@@ -260,7 +262,7 @@ export default function Page() {
 
                         {/* Log Out */}
                         <View className="flex flex-col w-full items-center justify-center gap-1.5 pt-5 pb-6 text-center">
-                            <TouchableOpacity className="flex flex-row w-full h-10 items-center justify-center gap-1 px-3 py-1.5 rounded-full bg-error/5 active:bg-error/10">
+                            <TouchableOpacity onPress={() => router.replace('/')} className="flex flex-row w-full h-10 items-center justify-center gap-1 px-3 py-1.5 rounded-full bg-error/5 active:bg-error/10">
                                 <Ionicons name="log-out-outline" size={16} color="#ba1a1a" />
                                 <Text className="text-xs font-bold text-header-lg color-error">Keluar dari Akun</Text>
                             </TouchableOpacity>

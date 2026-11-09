@@ -1,10 +1,12 @@
-import { Alert, Image, ImageBackground, Platform, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Image, Keyboard, KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 
-import { MaterialIcons, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { Link, useRouter } from "expo-router";
+import { BackHandler } from 'react-native';
+
+import { useRouter, useSegments } from "expo-router";
 
 import { styles } from "../styles/loginStyle";
 
@@ -26,9 +28,25 @@ export default function register() {
   const [secureText, setSecureText] = useState(true);
   const [confSecureText, setConfSecureText] = useState(true);
   
+  const [text, setText] = useState("");
+
+  const segments = useSegments();
   const router = useRouter();
 
-  const [text, setText] = useState("");
+   useEffect(() => 
+        {
+            const backAction = () => {
+                const currentRoute = segments[segments.length - 1];
+                if (currentRoute === 'register') {
+                    router.replace('/');
+                    return true;
+                }
+                return false;
+            };
+        
+            const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+            return () => backHandler.remove();
+        }, []);
 
   const handleRegister = async() => {
     

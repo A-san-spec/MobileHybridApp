@@ -2,7 +2,9 @@ import { Alert, Image, ImageBackground, Platform, ScrollView, KeyboardAvoidingVi
 
 import { MaterialIcons } from '@expo/vector-icons';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { BackHandler } from 'react-native';
 
 import { Link, useRouter } from "expo-router";
 
@@ -21,10 +23,22 @@ export default function index() {
   const [secureText, setSecureText] = useState(true);
   const [isUsernameFocused, setIsUsernameFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+
+  const [activeTab, setActiveTab] = useState("Index");
   
   const router = useRouter();
 
   const [text, setText] = useState("");
+
+  useEffect(() => 
+        {
+            const backAction = () => {
+                return false;
+            };
+        
+            const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+            return () => backHandler.remove();
+        }, []);
 
   const handleLogin = async() => {
     

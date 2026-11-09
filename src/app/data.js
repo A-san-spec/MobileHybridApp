@@ -1,0 +1,70 @@
+import sapiImage from '../../assets/images/Sapi2.jpg';
+
+
+export const petsData = [
+    {
+        id: '1',
+        name: 'Milo',
+        breed: 'Golden Retriever',
+        age: '3 Thn',
+        weight: '28 kg',
+        category: 'Anjing',
+        imageuri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBmdBKR7buTBWQpKy_rZ4HS2T-w0GXBf7RBXDJwgaLxp2F17Tzdu6HRv8yS7lhDYLvx1uqX9czep3UcYGI005wel2BhbAsTewm0vDlAaOQD81IS5MzgXghnrsjwSaEw8cmDuv2frcUgVsiS5Mg1dfn4RGDLSvmk67npMQWOBGjO7YIprnCinXwHhLeuxzMCx-nX9UDq1Fr7gFZBAmaTqwmppeuvSqnTbk5NDhU26Q',
+        statusVaksin: 'Vaksin Lengkap',
+        sifat: 'Ramah Anak',
+        aktivitas: 'Rutin Jalan Sore 3x/minggu',
+    },
+    {
+        id: '2',
+        name: 'Luna',
+        breed: 'British Shorthair',
+        age: '2 Thn',
+        weight: '4.2 kg',
+        category: 'Kucing',
+        imageuri:'https://lh3.googleusercontent.com/aida-public/AB6AXuDc3GmAjjnGEcLHLhqi7NgFA7xDONPzyrTghwiUsuTFn_I8D9ySH3N2vb-BV7BsDsW3gKeXW-83ubM0RO55ZfvugZ5ARLqtukl6-3J_r6h-s08Qy87p6Z6wr3BRBGOyjLPm9oto8EjX_pc8OYZN3sWezEyIEJvjD79pNypjeGXRpYqshv_9C61VPSoCb4aQk9QNPGkmOGFqRoNLgoaZ15HhdcS8GT-xMjkI7tS2izc',
+        statusVaksin: 'Steril & Vaksin',
+        sifat: 'Butuh Adaptasi',
+        aktivitas: 'Kunjungan Saat Liburan',
+    },
+    {
+        id: '3',
+        name: 'Supro',
+        breed: 'Friesian Holstein',
+        age: '3 Thn',
+        weight: '1200 kg',
+        category: 'Sapi',
+        image: sapiImage,
+        statusVaksin: 'Vaksin Lengkap',
+        sifat: 'Malas Gerak',
+        aktivitas: 'Makan rumput setiap hari',
+    },
+];
+
+export const sitterData = [
+    {
+        id: '1',
+        name: 'Sarah Amanda',
+        role: '5 thn pengalaman · Rumah berhalaman aman',
+        rating: '4.9',
+        reviewsCount: '128',
+        distance: '0.8 km · Pondok Gede',
+        badgeFeature: 'Update Foto/Video',
+        priceLabel: 'Tarif harian',
+        price: 'Rp 75.000',
+        priceUnit: '/ hari',
+        imageuri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKFuPFZye5-FKfywmPhJOxbgK2yJaPseNkIxkVNCwHeBcm8E9X79LKYMvXEbLZGMqcTWEwPnssgNJoc30xKXn7Pfl9RSUZ4MGjVQ5uIvt-sGkrAHEqOxNMOzgzUs0xRRfUYJXunLSUM8I5zrRlNlJAvg2Go9HBHpnm3l82NUybqOrfNqjv-qnwXEWyQI6T9qI_7ndn7W-TKqLyxlTSRd3YbsqWo9absJf0y-pZd987K7mZwCf2Nm7u',
+    },
+    {
+        id: '2',
+        name: 'Budi Pratama',
+        role: 'Spesialis kucing senior & rawat berkala',
+        rating: '4.8',
+        reviewsCount: '94',
+        distance: '1.4 km · Senopati',
+        badgeFeature: 'Beri Makan & Obat',
+        priceLabel: 'Tarif kunjungan',
+        price: 'Rp 50.000',
+        priceUnit: '/ kunjungan',
+        imageuri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDowJGvGUPKYliZ8zAmsLljDA5LHo-Lfyhl6rIHAW_DiotfB9uRU5ekvEyeR7CBbCoZL9VOHivUtNfXhiCEUtDmIPMulqz7qbPvKL4PuFqO0kpgNuEK_c_l30CIWRAhPBgh4m6lhqynuOc1cWuChqVXFACvbQyB9H0XT3Pdzu65r56GRju9t3mro-I0eu9gpk53m7tSUsTv-0DPitbz0Ql1zV4xyyZ5NFjXtau4bZSSNLNr0emd_2SM',
+    },
+];
