@@ -1,10 +1,9 @@
-import { Alert, Image, Keyboard, KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { useEffect, useState } from "react";
-import { BackHandler } from 'react-native';
-import { useRouter, useSegments } from "expo-router";
-import { styles } from "../styles/loginStyle";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter, useSegments } from "expo-router";
+import { useEffect, useState } from "react";
+import { Alert, BackHandler, Image, Keyboard, KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
+import { styles } from "../styles/loginStyle";
 
 export default function register() {
 
@@ -253,7 +252,7 @@ export default function register() {
 
               <View className="flex-row items-center justify-center mt-20">
                 <Text className="text-[16px] text-[#1c1b1b76]">Sudah punya akun? </Text>
-                <TouchableOpacity onPress={() => handleRegister()}>
+                <TouchableOpacity onPress={() => router.replace('/')}>
                     <Text className="text-secondary-container font-bold text-[16px]">Login</Text>
                 </TouchableOpacity>
               </View>
