@@ -137,3 +137,81 @@ const [username, setUsername] = useState("");
             </View>
         </View>
 ```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+==========================================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Analisis Kebutuhan
+
+## A. Masalah
+
+1. **Kekhawatiran Pemilik Hewan**
+
+   Pemilik hewan peliharaan sering merasa khawatir ketika harus meninggalkan hewan kesayangannya, terutama saat bekerja atau bepergian ke luar kota. Menemukan tempat penitipan yang aman dan benar-benar bisa dipercaya pun bukan hal yang mudah.
+
+2. **Kurangnya Transparansi Biaya dan Informasi**
+
+   Tidak semua tempat penitipan memberikan informasi yang jelas mengenai fasilitas, jaminan keamanan, maupun rincian biaya yang harus dibayarkan. Hal ini membuat pemilik hewan terkadang kesulitan untuk memperkirakan total pengeluaran sejak awal.
+
+## B. Target Pengguna
+
+1. **Pemilik Hewan Peliharaan (Pet Owners)**
+
+   Pekerja kantoran, mahasiswa, atau keluarga yang membutuhkan layanan penitipan hewan sementara dengan penanganan profesional.
+
+2. **Penyedia Jasa Penitipan (Pet Sitters)**
+
+   Pengasuh hewan mandiri atau pemilik tempat penitipan hewan di wilayah perkotaan.
+
+
+## C. Kebutuhan Pengguna
+
+1. **Otentikasi Pengguna**
+Pengguna bisa membuat akun baru dan login ke aplikasi dengan menggunakan email serta nomor WhatsApp sebagai informasi akun.
+
+2. **Pemilihan Profil Hewan Peliharaan**
+Pengguna dapat memilih hewan peliharaan yang ingin dititipkan, baik anjing maupun kucing, berdasarkan profil hewan yang sudah terdaftar di aplikasi. Pengguna juga bisa memilih lebih dari satu hewan dalam satu kali pemesanan.
+
+3. **Penentuan Durasi Penitipan**
+Pengguna dapat menentukan berapa lama hewan akan dititipkan. Aplikasi juga menampilkan perkiraan tanggal check-in dan check-out sesuai dengan durasi yang dipilih.
+
+4. **Instruksi Perawatan Khusus**
+Pengguna dapat menambahkan catatan mengenai kebutuhan hewan selama dititipkan, seperti jenis makanan, jadwal pemberian obat, alergi, maupun kebiasaan tertentu agar sitter bisa memberikan perawatan yang sesuai.
+
+5. **Kalkulasi Biaya Transparan**
+Sebelum menyelesaikan pemesanan, pengguna dapat melihat rincian biaya yang perlu dibayar, mulai dari biaya penitipan per hari, potongan harga jika ada promo, hingga biaya garansi asuransi. Dengan begitu, pengguna bisa mengetahui total pembayaran sejak awal.
+
+6. **Informasi Lokasi dan Navigasi**
+Pengguna dapat melihat alamat lengkap tempat penitipan hewan dan menggunakan fitur navigasi yang terhubung dengan aplikasi peta untuk membantu menemukan lokasi dengan lebih mudah.
+
+---
+
+## D. Pemetaan Kebutuhan Pengguna ke Desain UI
+
+| No | Kebutuhan Pengguna        | Layar (Screen)            | Komponen UI                                                          |
+|----|---------------------------|---------------------------|----------------------------------------------------------------------|
+| 1 | Pendaftaran & Masuk Akun   | `index.tsx` (Autentikasi) | Form Input Email & WhatsApp, Button Registrasi, Handler AsyncStorage |
+| 2 | Kredibilitas Sitter        | `reserve.tsx` (Pemesanan) | SitterProfileCard (Foto Profil, Nama, Rating, Jarak, Label Keahlian) |
+| 3 | Pemilihan Hewan Peliharaan | `reserve.tsx` (Pemesanan) | PetSelectionCard (Gambar Hewan, Jenis, Ras, Berat, Status Seleksi)   |
+| 4 | Layanan & Durasi Jadwal    | `reserve.tsx` (Pemesanan) | ServiceDetailCard, Opsi Tombol Durasi Cepat (1 Hari, 3 Hari, dll.)   |
+| 5 | Lokasi dan Petunjuk Arah   | `reserve.tsx` (Pemesanan) | LocationCard, Tombol Navigasi Peta (Integrasi Linking)               |
+| 6 | Catatan Instruksi Khusus   | `reserve.tsx` (Pemesanan) | CareNotesCard (Wadah Teks Instruksi Makanan, Obat, dan Kebiasaan)    |
+
+
+## E. Alasan Design
+1. Penggunaan NativeWind dan Styling Terpusat:
+   - Penggunaan Tailwind CSS via NativeWind mempermudah konsistensi tata letak visual berbasis kelas utilitas.
+   - Penggunaan kombinasi warna putih, hijau dan orange dipakai karena memberikan kesan bersih dan nyaman untuk dilihat
+     
+2. Penggunaan Struktur Tampilan Statis:
+   - Menghindari penggunaan iterasi dinamis berlebih pada komponen UI tertentu untuk menjaga performa rendering.
+   - 
+     
+3. Penanganan SafeArea dengan Safe Margin Padding:
+   - Penggunaan kontainer View dengan pt yg disesuaikan sebagai pengganti SafeAreaView standar dilakukan untuk menghindari ketidakcocokan tata letak pada versi React Native/Expo tertentu di platform Android.
+   
+4. Navigasi Sistem Android (BackHandler):
+   - Penerapan logika navigasi BackHandler memastikan pergerakan kembali pengguna selalu terarah menuju layar utama sehingga tidak terjadi kesalahan menutup aplikasi dari page bukan home secara mendadak karena salah geser atau salah pencet tombol.
+
