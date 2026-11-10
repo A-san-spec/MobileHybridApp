@@ -1,56 +1,139 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Jawaban UTS
 
-## Get started
+## 1. React Native
 
-1. Install dependencies
+React Native adalah sebuah framework yang dibuat untuk build sebuah aplikasi seluler lintas platform seperti Android, IOS, dll. dengan menggunakan JavaScript dan React. React native menggunakan 2 thread Utama, yaitu
 
-   ```bash
-   npm install
-   ```
+- **JavaScript** : Tempat di mana pengaplikasian code logic apps, state dan komponen react dibuat.
 
-2. Start the app
+- **Native** : sebuah thread yg bisa menjalankan elemen UI yg disesuaikan dengan system operasi Android atau IOS sehingga code bisa membuat code untuk menciptakan UI dan memakai sifat - sifat/Komponen - komponen OS mobile agar sesuai dengan tujuan kita.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 2. Keunggulan untuk apps hybrid
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+a. Bisa dipake code nya sama sama baik untuk android atau IOS karena basic code nya pake logic dan kalo ada yang beda - beda sedikit bisa pakai library khusus OS tersebut
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+b. UX akan lebih nyaman karena menggunakan komponen langsung dari system HP. Baik itu dari bentuk tombol, responsivitas touch, sampai animasi untuk pindah layer itu menggunakan system pengolahan UI resmi dari OS HP masing masing.
 
-## Get a fresh project
+c. Banyak sekali library ready to use dari react & community pengguna react native, seperti react, expo, dan nativewind yg bisa digabungkan dengan logic code yg memudahkan sekali bagi developer untuk mengembangkan apps.
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
+## 3. Komponen, props, State, Navigasi
+
+### Components
+
+- Components : Blok - blok yg digunakan untuk memisahkan antar section atau division atau elemen di dalam apps(<View><View>), dan juga sebagai sebuah elemen yg bisa melakukan tugas spesifik seperti input khusus text (<Text></Text>), untuk tombol (TouchableOpacity), masukkin gambar (<Image></Image>), dll. Yg berfungsi sebagai dasar untuk membangun UI dan UX dari sebuah apps.
+
+**Contoh :**
+
+```jsx
+<View className="flex-row items-center justify-center mt-20 mb-10">
+       <Text className="text-[16px] text-[#1c1b1b76]">Belum punya akun? </Text>
+
+       <TouchableOpacity onPress={() => router.replace('/register')}>
+             <Text className="text-secondary-container font-bold text-[16px]">Daftar Sekarang</Text>
+       </TouchableOpacity>
+</View>
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+```jsx
+<Image 
+   source={{ uri: 'https://wallpapercave.com/wp/wp2777285.jpg' }}
+   resizeMode="cover"
+   className="absolute inset-0 w-full h-full" 
+/>
+```
 
-### Other setup steps
+---
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Props
 
-## Learn more
+- Props : Sebuah mekanisme untuk mengambil komponen dari komponen parent ke komponen child yg gak bisa diubah oleh komponen penerima
 
-To learn more about developing your project with Expo, look at the following resources:
+**Contoh :** Belum dipakai
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+### State
 
-Join our community of developers creating universal apps.
+- State : Data internal yg bersifat dinamis dan dapat diubah berdasarkan interaksi dan keperluan user. Sehingga perubahan ini bisa memicu re-render sebuah komponen.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Contoh :**
+
+```jsx
+const [username, setUsername] = useState("");
+
+<TextInput
+    className={`${styles.input} ${isUsernameFocused ? 'border-2 border-[#6bd8cb]' : ''}`}
+    placeholder="Username"
+    placeholderTextColor="#1c1b1b76" 
+    value={username} <----------------------- ini contoh pake state
+    onChangeText={setUsername}
+    autoCapitalize="none"
+    autoCorrect={false}
+    onFocus={() => setIsUsernameFocused(true)}  
+    onBlur={() => setIsUsernameFocused(false)}
+/>
+```
+
+---
+
+### Navigation
+
+- Navigation : UI & sistem yg berfungsi untuk perpindahan antar-layar untuk sebuah apps.
+
+**Contoh :**
+
+```jsx
+<View className="flex-row right-0 bg-white border-t border-gray-200 py-3 px-2 justify-between items-center shadow-lg">
+                <TouchableOpacity 
+                    onPress={() => {setActiveTab('Home'); router.replace('/home');}} 
+                    className="items-center flex-1"
+                    activeOpacity={0.7}
+                >
+                    <Ionicons 
+                        name={activeTab === 'Home' ? 'home' : 'home-outline'} 
+                        size={24}
+                        color={activeTab === 'Home' ? '#008378' : '#747474'} 
+                        />
+                    <Text className={`text-[12px] mt-1 ${activeTab === 'Home' ? 'text-primary font-bold' : 'text-gray-500 font-medium'}`}>
+                        Home
+                    </Text> 
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                    onPress={() => setActiveTab('Search')} 
+                    className="items-center flex-1"
+                    activeOpacity={0.7}
+                >  
+                    <Ionicons 
+                    name={activeTab === 'Search' ? 'compass' : 'compass-outline'} 
+                    size={24} 
+                    color={activeTab === 'Search' ? '#008378' : '#747474'} 
+                    />
+                    <Text className={`text-[12px] mt-1 ${activeTab === 'Search' ? 'text-primary font-bold' : 'text-gray-500 font-medium'}`}>
+                        Search
+                    </Text>
+                </TouchableOpacity>
+
+
+                <TouchableOpacity 
+                    onPress={() => {setActiveTab('Profile'); router.replace('/profile');}} 
+                    className="items-center flex-1"
+                    activeOpacity={0.7}
+                >
+                    <Ionicons 
+                        name={activeTab === 'Profile' ? 'person' : 'person-outline'} 
+                        size={24} 
+                        color={activeTab === 'Profile' ? '#388e87' : '#747474'} 
+                    />
+                    <Text className={`text-[12px] mt-1 ${activeTab === 'Profil' ? 'text-primary font-bold' : 'text-gray-500 font-medium'}`}>
+                        Profile
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+```
